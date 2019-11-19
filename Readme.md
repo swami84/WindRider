@@ -12,7 +12,9 @@
 
 - To gain a competitive edge ride sharing services need to retain and scale their customer base (both riders and drivers)
 
-The city of Chicago has released uncorrelated anonymous datasets on
+#### My capstone project, WindRider, aims to solve some of these issues by highlighting the important features and providing accurate trip information to the ride share customers.
+
+For my analysis, I used Chicago city's rideshare network data. The city of Chicago has released uncorrelated anonymous datasets on
 
 - [Drivers](https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Drivers/j6wf-834c) (Residence Zip Code, Start Date, Reported Date, Number of Trips)
 
@@ -20,8 +22,7 @@ The city of Chicago has released uncorrelated anonymous datasets on
 
 - [Trips](https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p) (Pickup location, Time, Dropoff Location, Time, Trip Time, Trip Distance, Trip Fare)
 
-Some key insights
-
+# Brief Insights
 ## Proximity Effect:
 
 - Drivers who reside closer to Chicago city center (proximity) have higher throughput (trips/unit time)

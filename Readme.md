@@ -46,6 +46,31 @@ Some key insights
 - Graph shows the top 15 vehicles by avg number of trips
 ![Image 4](https://github.com/swami84/WindRider/blob/master/Notebooks/Images/Top%2015%20Vehicles.png)
 
+# Conclusions
+
+- ### City of Chicago’s rideshare network’s drivers data was analyzed
+```
+	-Over the years rideshare drivers network have expanded to suburbs of the city
+
+	-Drivers residing closer to Chicago city were able to provide more rides compared to drivers residing farther from the city
+
+	-Mean Rides/Driver/Year dropped by ~ 1.5 rides for every residence mile away from city center
+```
+* ### A brief analysis of the rider and trip trends shows
+```
+	-Downtown Chicago is the most active area for pickup and drop-offs at most times
+
+	-Passengers from northern suburbs request more pickups to downtown in the morning and vice versa in the evenings
+
+	-Friday and Saturday night trip count dominate among other weekdays, Trip rates are highest during peak pickup time (8-10AM, 4-6PM)
+
+	-Monthly trip analysis shows number of trips for winter months is higher compared to other months trip cost ($/mile) is highest for summer month
+```
+* ###  Two prediction models – Ridge & Random Forest were utilized to predict trip cost and time
+```
+	-Important features in order – Trip Miles, Distance from City Center, Carpool and pick up hour
+```
+
 # Further Reading
 - All analysis and predictive models can be found in the [Notebooks](https://github.com/swami84/WindRider/tree/master/Notebooks) folder
 - Images can be found in [Images](https://github.com/swami84/WindRider/tree/master/Notebooks/Images) folder

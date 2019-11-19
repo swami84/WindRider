@@ -37,7 +37,7 @@ For my analysis, I used Chicago city's rideshare network data. The city of Chica
 
 - Most rides and ride cost peak between 4 - 8 PM
 
-![Image 3](https://github.com/swami84/WindRider/blob/master/Notebooks/Images/Week_Summary.png)
+![Image 3](https://github.com/swami84/WindRider/blob/master/Notebooks/Images/Trips_Week_Summary.png)
 
 
 

@@ -1,7 +1,4 @@
-﻿
-<![endif]-->
-
-# WindRider
+﻿# WindRider
 
 ## Predictive Insights from Ridesharing Analytics
 

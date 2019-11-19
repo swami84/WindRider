@@ -31,8 +31,8 @@ class ColumnSelectTransformer(base.BaseEstimator, base.TransformerMixin):
 key = 'd49c6352494c4ea7b7188e21045edaf5'
 geocoder = OpenCageGeocode(key)
 
-RF_cost = pickle.load(open('./Pickled Models/Model_cost_pkl', 'rb'))
-RF_time = pickle.load(open('./Pickled Models/Model_time_pkl', 'rb'))
+RF_cost = pickle.load(open('C:/Machine Learning/Pickled Models/Model_cost_pkl', 'rb'))
+RF_time = pickle.load(open('C:/Machine Learning/Pickled Models/Model_time_pkl', 'rb'))
 full_pipeline = pickle.load(open('./Pickled Models/full_pipeline_pkl', 'rb'))
 
 date = datetime.datetime.now()
@@ -85,20 +85,32 @@ def return_pred(PU_A, DO_A, PU_T):
     Trip_Miles = haversine_np (pu_lon, pu_lat,do_lon, do_lat)
     input_list['Year'] = 2019
     input_list['Trip Miles'] = Trip_Miles
-    input_list['Trips Pooled'] = 1
-    input_list['Shared Trip Authorized'] = True
+    input_list['Trips Pooled'] = 0
+    input_list['Shared Trip Authorized'] = False
     input_list['Pickup Hour'] = int(re.split(':',PU_T)[0])
     input_list['Pickup Dist from Downtown'] = haversine_np(pu_lon, pu_lat, -87.6298,41.8781)
-    input_list['Dropoff Dist from Downtown'] = haversine_np(do_lon, do_lon, -87.6298,41.8781)
+    input_list['Dropoff Dist from Downtown'] = haversine_np(do_lon, do_lat, -87.6298,41.8781)
     input_list['Month'] = date.strftime("%B")
     input_list['Day'] = date.strftime("%A")
      
-    X_test = pd.DataFrame.from_dict([input_list])
-    #X = pipeline.transform(X_test)
+    X_test_ncp = pd.DataFrame.from_dict([input_list])
+    input_list['Shared Trip Authorized'] = True
+    input_list['Trips Pooled'] = 2
+    X_test_cp = pd.DataFrame.from_dict([input_list])
+    cost_cp = RF_cost.predict(X_test_cp)
+    carpool_cost = '$' + str(np.round(cost_cp[0],2))
     
-    cost = RF_cost.predict(X_test)
-    time = RF_time.predict(X_test)
-    return ('$' + str(np.round(cost[0],2)), str(np.round(time[0],0)) + ' Minutes')
+    cost_ncp = RF_cost.predict(X_test_ncp)
+    single_cost = '$' + str(np.round(cost_ncp[0],2))
+                                       
+    time_ncp = RF_time.predict(X_test_ncp)
+    single_time = str(np.round(time_ncp[0],0)) + ' Minutes'
+                                  
+    time_cp = RF_time.predict(X_test_cp)
+    carpool_time = str(np.round(time_cp[0],0)) + ' Minutes'
+
+                                       
+    return (carpool_cost,single_cost,carpool_time ,single_time)
   
 @app.route('/PP', methods = ['POST', 'GET'])
 def PP():
@@ -108,8 +120,10 @@ def PP():
         app.info['Pickup_Add'] = request.form['PU_Address']
         app.info['Dropoff_Add'] = request.form['DO_Address']
         app.info['Pickup_Time'] = request.form['PU_Time']
-        Pred_cost,Pred_Time = return_pred (app.info['Pickup_Add'], app.info['Dropoff_Add'],app.info['Pickup_Time'])
-        return render_template('PPred.html', Pred_Cost = Pred_cost, Pred_Time= Pred_Time,PU_Ad = app.info['Pickup_Add'], DO_Ad =app.info['Dropoff_Add']  )
+        Pred_cost_cp, Pred_cost_single,Pred_Time_cp, Pred_Time_single = return_pred (app.info['Pickup_Add'], app.info['Dropoff_Add'],app.info['Pickup_Time'])
+        return render_template('PPred.html', Pred_cost_cp = Pred_cost_cp, Pred_cost_single =Pred_cost_single,
+                               Pred_Time_cp = Pred_Time_cp, Pred_Time_single = Pred_Time_single,
+                               PU_Ad = app.info['Pickup_Add'], DO_Ad =app.info['Dropoff_Add']  )
    
 @app.route('/PPred', methods = ['POST','GET'])
 def PPred(PU_add):

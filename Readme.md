@@ -39,12 +39,14 @@ Some key insights
 ![Image 3](https://github.com/swami84/WindRider/blob/master/Notebooks/Images/Week_Summary.png)
 
 
+
+
 ## Top 15 Vehicles
 
 - Graph shows the top 15 vehicles by avg number of trips
-![Image 4]([https://github.com/swami84/WindRider/blob/master/Notebooks/Images/Top%2015%20Vehicles.png)
+![Image 4](https://github.com/swami84/WindRider/blob/master/Notebooks/Images/Top%2015%20Vehicles.png)
 
 # Further Reading
-- All analysis and predictive models can be found in the [Notebooks]([https://github.com/swami84/WindRider/tree/master/Notebooks) folder
-- Images can be found in [Images]([https://github.com/swami84/WindRider/tree/master/Notebooks/Images) folder
-- Spatio - Temporal Maps are located in [HTML]([https://github.com/swami84/WindRider/tree/master/Notebooks/HTML) folder
+- All analysis and predictive models can be found in the [Notebooks](https://github.com/swami84/WindRider/tree/master/Notebooks) folder
+- Images can be found in [Images](https://github.com/swami84/WindRider/tree/master/Notebooks/Images) folder
+- Spatio - Temporal Maps are located in [HTML](https://github.com/swami84/WindRider/tree/master/Notebooks/HTML) folder

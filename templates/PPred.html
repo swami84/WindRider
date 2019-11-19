@@ -1,0 +1,57 @@
+<!doctype html>
+<head>
+  <!-- BASICS -->
+  <meta charset="utf-8">
+  <title>WindRider</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="js/rs-plugin/css/settings.css" media="screen">
+  
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/isotope.css') }}" media="screen">
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/flexslider.css') }}" type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" >
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- skin -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='skin/default.css') }}">
+  <!-- =======================================================
+    Theme Name: Vlava
+    Theme URL: https://bootstrapmade.com/vlava-free-bootstrap-one-page-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+
+</head>
+  <section id="Trip_Prediction">
+    <div class="Trip_Prediction">
+      
+      
+    </div>
+  </section>
+<title>Estimated Trip Duration: </title>
+ <p></p>
+<div class=page>
+
+  
+   <section id="section-map" class="clearfix">
+   
+   
+    <div class="align-center">
+	<h1> Predictions </h1>
+
+	
+  <h3><b>Estimated Trip Cost:</b> {{Pred_Cost}} 	 </h3>
+  <h3><b>Estimated Trip Duration:</b> {{Pred_Time}} 	 </h3>
+	<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d47515.07112192901!2d-87.65955480875172!3d41.89948173027734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x880fd36ba35777c7%3A0xf460f4ecbbec8fda!2sPeggy%20Notebaert%20Nature%20Museum%2C%20North%20Cannon%20Drive%2C%20Chicago%2C%20IL!3m2!1d41.9268019!2d-87.63532359999999!4m5!1s0x880e2ca066ac4d85%3A0x3daab95490cf8cb4!2sGrant%20Park%2C%20East%20Randolph%20Street%2C%20Chicago%2C%20IL!3m2!1d41.8721722!2d-87.61875049999999!5e0!3m2!1sen!2sus!4v1570586649148!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe></div> -->
+<iframe
+  width="450"
+  height="250"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/directions?key=YOUR_API_KEY&origin={{PU_Ad}}
+  &destination={{DO_Ad}}" allowfullscreen>
+</iframe>
+
+  </section>
+</div>

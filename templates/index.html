@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- BASICS -->
+  <meta charset="utf-8">
+  <title>WindRider</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" type="text/css" href="js/rs-plugin/css/settings.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/isotope.css') }}" media="screen">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/flexslider.css') }}" type="text/css">
+  <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen">
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" >
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- skin -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='skin/default.css') }}" > 
+  <!--<link rel="stylesheet" href="skin/default.css"> -->
+  <!-- =======================================================
+    Theme Name: Vlava
+    Theme URL: https://bootstrapmade.com/vlava-free-bootstrap-one-page-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+
+</head>
+
+<body>
+  <section id="header" class="appear"></section>
+  <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(5, 42, 62, 1);">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      	  <span class="fa fa-bars color-white"></span>
+        </button>
+        <div class="navbar-logo">
+          <a href="{{ url_for('index') }}"><img src="{{ url_for ('static', filename ="img/logo_WR2.png") }}" alt="" ></a>
+        </div>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="#section-about">About</a></li>
+		  <li><a href="#section-contact">Contact</a></li>
+          <!--/. <li><a href="#section-contact">Contact</a></li> -->
+        </ul>
+      </div>
+      <!--/.navbar-collapse -->
+    </div>
+  </div>
+
+  <section id="intro">
+    <div class="intro-content">
+      <h2>Wind Rider</h2>
+      <h3>WIndy City's Ride Share Analytics</h3>
+      <div>
+        <a href="#section-services" class="btn-get-started scrollto">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- services -->
+  <section id="section-services" class="section pad-bot30 bg-white">
+    <div class="container">
+
+      <div class="row mar-bot40">
+        <div class="col-lg-4">
+          <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a mar-top20">
+            <div class="float-left mar-right20">
+              <a href="{{ url_for('DT') }}" class="hi-icon hi-icon-screen">screen</a>
+            </div>
+          </div>
+          <h3 class="text-bold">Driver Portal</h3>
+          <p>Estimate Driver Throughput and Find Pick Ups</p>
+
+          <div class="clear"></div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a mar-top20">
+            <div class="float-left mar-right20">
+              <a href="{{ url_for('PP') }}" class="hi-icon hi-icon-location">location</a>
+            </div>
+          </div>
+          <h3 class="text-bold">Passenger Portal</h3>
+          <p>Estimate your Trip Duration and Cost</p>
+		  
+
+          <div class="clear"></div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a mar-top20">
+            <div class="float-left mar-right20">
+              <a href="https://kepler.gl/demo/map?mapUrl=https://dl.dropboxusercontent.com/s/j0s3qa7f4k78hc9/keplergl_0doa6sl.json" class="hi-icon hi-icon-images">images</a>
+            </div>
+          </div>
+          <h3 class="text-bold">Ride Insights</h3>
+          <p>Visualize Maps from Custom & Filtered Data	</p>
+
+          <div class="clear"></div>
+        </div>
+
+      </div>
+    
+
+      </div>
+    </div>
+  </section>
+
+  <!-- spacer section:testimonial -->
+  <section id="testimonials" class="section" data-stellar-background-ratio="0.2">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="align-center">
+            <div class="flexslider testimonials-slider">
+              <ul class="slides">
+                <li>
+                  <div class="testimonial clearfix">
+                    <div class="mar-bot20">
+                      
+                    </div>
+                    <i class="fa fa-quote-left fa-5x"></i>
+                    <h3 class="text-bold">82% of riders didn’t tip their driver</h3>
+                    
+                  </div>
+                </li>
+
+                <li>
+                  <div class="testimonial clearfix">
+                    <div class="mar-bot20">
+                      
+                    </div>
+                    <i class="fa fa-quote-left fa-5x"></i>
+                    <h3 class="text-bold">More than 50% of Trip cost were less than $10</h3>
+                    <br/>
+                   
+                  </div>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- about -->
+  
+  <!-- /about -->
+
+  <!-- map -->
+ 
+
+  <!-- contact -->
+  <section id="section-contact" class="section appear clearfix">
+    <div class="container">
+
+      <div class="row mar-bot40">
+        <div class="col-md-offset-3 col-md-6">
+          <div class="section-header">
+            <h2 class="section-heading animated" data-animation="bounceInUp">CONTACT</h2>
+            <p>Please fill out the form below</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="cform" id="contact-form">
+            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <form action="" method="post" class="contactForm">
+
+              <div class="field your-name form-group">
+                <input type="text" name="name" placeholder="Your Name" class="cform-text" size="40" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                <div class="validation"></div>
+              </div>
+              <div class="field your-email form-group">
+                <input type="text" name="email" placeholder="Your Email" class="cform-text" size="40" data-rule="email" data-msg="Please enter a valid email">
+                <div class="validation"></div>
+              </div>
+              <div class="field subject form-group">
+                <input type="text" name="subject" placeholder="Subject" class="cform-text" size="40" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+                <div class="validation"></div>
+              </div>
+
+              <div class="field message form-group">
+                <textarea name="message" class="cform-textarea" cols="40" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+                <div class="validation"></div>
+              </div>
+
+              <div class="send-btn">
+                <input type="submit" value="SEND MESSAGE" class="btn btn-theme">
+              </div>
+
+            </form>
+          </div>
+        </div>
+        <!-- ./span12 -->
+      </div>
+
+    </div>
+  </section>
+
+  <section id="footer" class="section footer">
+    <div class="container">
+      <div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
+        <div class="col-sm-12 align-center">
+          <ul class="social-network social-circle">
+            <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row align-center mar-bot20">
+        <ul class="footer-menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Get in touch</a></li>
+        </ul>
+      </div>
+      <div class="row align-center copyright">
+        <div class="col-sm-12">
+          <p>Copyright &copy; All rights reserved</p>
+        </div>
+      </div>
+      <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Vlava
+        -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade.com</a>
+      </div>
+    </div>
+
+  </section>
+  <a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- Javascript Library Files -->
+  <script type=text/javascript src="{{ url_for('static', filename='js/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='js/jquery.easing.1.3.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='js/jquery.isotope.min.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='js/jquery.nicescroll.min.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='js/fancybox/jquery.fancybox.pack.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='js/skrollr.min.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='js/jquery.scrollTo.min.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='js/jquery.localScroll.min.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='js/stellar.js') }}"></script>
+  
+  <script type=text/javascript src="{{ url_for('static', filename='js/jquery.appear.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='js/jquery.flexslider-min.js') }}"></script>
+  
+
+ 
+ 
+
+
+
+
+
+  
+
+
+  <!-- Contact Form JavaScript File -->
+  
+	<script type=text/javascript src="{{ url_for('static', filename='contactform/contactform.js') }}"></script>
+  <!-- Template Main Javascript File -->
+  <script type=text/javascript src="{{ url_for('static', filename='js/main.js') }}"></script>
+  
+
+</body>
+
+</html>

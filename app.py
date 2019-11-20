@@ -12,8 +12,6 @@ from flask import Flask, render_template, request, redirect, url_for
 
 path =(os.getcwd())
 
-
-
 class ColumnSelectTransformer(base.BaseEstimator, base.TransformerMixin):
     
     def __init__(self, col_names):
@@ -27,18 +25,12 @@ class ColumnSelectTransformer(base.BaseEstimator, base.TransformerMixin):
         return X[self.col_names].values
 
 
-
 key = 'd49c6352494c4ea7b7188e21045edaf5'
 geocoder = OpenCageGeocode(key)
 
 RF_cost = pickle.load(open('C:/Machine Learning/Pickled Models/Model_cost_pkl', 'rb'))
 RF_time = pickle.load(open('C:/Machine Learning/Pickled Models/Model_time_pkl', 'rb'))
-full_pipeline = pickle.load(open('./Pickled Models/full_pipeline_pkl', 'rb'))
-
-date = datetime.datetime.now()
-#date.strftime("%B")
-
-
+driver_zc = pickle.load(open('./Pickled Models/Driver_TP_pkl', 'rb'))
 
 app = Flask(__name__)
 app.info={}
@@ -60,11 +52,20 @@ def index():
   return render_template('index.html')
 
 
-@app.route('/DT', methods = ['POST', 'GET'])
-def DT():
-    if request.method == 'GET':
-        return render_template('DT.html')
-        
+##@app.route('/DT', methods = ['POST', 'GET'])
+##def DT():
+##    if request.method == 'GET':
+##        return render_template('DT.html')
+##        
+def return_tpy(zipcode):
+    zc = geocoder.geocode(zipcode)
+    dr_lat = zc[0]['geometry']['lat']
+    dr_lon = zc[0]['geometry']['lng']
+    res_dist = haversine_np(dr_lon, dr_lat, -87.6298,41.8781)
+    
+    
+    mean_tpy = driver_zc.intercept_ + (driver_zc.coef_[0]*res_dist)
+    return mean_tpy
 
 def return_pred(PU_A, DO_A, PU_T):
     date = datetime.datetime.now()
@@ -130,6 +131,22 @@ def PPred(PU_add):
     if request.method == 'GET':
         
         return render_template('PPred.html')
+
+@app.route('/DT', methods = ['POST', 'GET'])
+def DT():
+    if request.method == 'GET':
+        return render_template('DT.html')
+    else:
+        app.info['Zipcode'] = str(request.form['res_zip'])
+        
+        tpy_est = return_tpy(app.info['Zipcode'])
+        return render_template('DPred.html', tpy_est = tpy_est )
+
+
+@app.route('/DPred', methods = ['POST','GET'])
+def DPred():
+    if request.method == 'GET':
+        return render_template('DPred.html')
         
 if __name__ == '__main__':
   app.run(debug=True)

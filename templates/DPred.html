@@ -6,21 +6,16 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="js/rs-plugin/css/settings.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen">
-  <link rel="stylesheet" href="css/flexslider.css" type="text/css">
-  <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen">
+  
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/isotope.css') }}" media="screen">
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/flexslider.css') }}" type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" >
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700">
 
-  <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <!-- skin -->
-  <link rel="stylesheet" href="skin/default.css">
-  <!-- =======================================================
-    Theme Name: Vlava
-    Theme URL: https://bootstrapmade.com/vlava-free-bootstrap-one-page-template/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='skin/default.css') }}">
 
 </head>
   <section id="Trip_Prediction">
@@ -37,9 +32,9 @@
    
    
     <div class="align-center">
-	<h3><b>Estimated Trips Per Year: </b> 250 - 600 <h6> Based on your residence and vehicle information from 2019 data</h6></h3> 
+	<h3><b>Estimated Trips Per Year: </b> {{tpy_est}}<h6> Based on your residence and vehicle information from 2019 data</h6></h3> 
   <h3> You can improve your throughput by using the 2019 Pickup Map </h3>
-	<iframe src="C:\Users\swami\Dropbox\Code\Python Projects\TDI Comp\Density.html" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe></div>
+	<iframe src="{{ url_for('static', filename='density.html') }}" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe></div>
   </section>
 </div>
 

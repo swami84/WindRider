@@ -25,7 +25,7 @@ class ColumnSelectTransformer(base.BaseEstimator, base.TransformerMixin):
         return X[self.col_names].values
 
 
-key = 'd49c6352494c4ea7b7188e21045edaf5'
+key = 'ENTER YOUR API_KEY HERE'
 geocoder = OpenCageGeocode(key)
 
 RF_cost = pickle.load(open('C:/Machine Learning/Pickled Models/Model_cost_pkl', 'rb'))
@@ -52,11 +52,7 @@ def index():
   return render_template('index.html')
 
 
-##@app.route('/DT', methods = ['POST', 'GET'])
-##def DT():
-##    if request.method == 'GET':
-##        return render_template('DT.html')
-##        
+
 def return_tpy(zipcode):
     zc = geocoder.geocode(zipcode)
     dr_lat = zc[0]['geometry']['lat']

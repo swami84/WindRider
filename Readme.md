@@ -22,30 +22,47 @@ For my analysis, I used Chicago city's rideshare network data. The city of Chica
 
 - [Trips](https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p) (Pickup location, Time, Dropoff Location, Time, Trip Time, Trip Distance, Trip Fare)
 
+
 # Brief Insights
-## Proximity Effect:
+
+
+
+## Driver Residence Proximity Effect:
+
+Driver analysis can be found in the [Drivers Notebook](https://nbviewer.jupyter.org/github/swami84/WindRider/blob/master/Notebooks/Drivers.ipynb)
+
+
+- Year 2017 saw maximum number of drivers joining the rideshare network
+
+- Large fraction of drivers who join the rideshare network reside within 10-15 miles of the city
+
+- Over the years (2013 - 2018) drivers have spread out and more drivers have joined from suburbs of the city
+<Insert histogram here>
 
 - Drivers who reside closer to Chicago city center (proximity) have higher throughput (trips/unit time)
 
-![Image 2](https://github.com/swami84/WindRider/blob/master/Notebooks/Images/Driver_Num_Trips_Zip%20Code%20Map.png)
+![Image 1](https://github.com/swami84/WindRider/blob/master/Notebooks/Images/Driver_Num_Trips_Zip%20Code%20Map.png)
 
-- Proximity effect amplifies over the years
+- Proximity effect amplifies over the years. Drivers living closer to the city center get lion share of the rides and their share increases. i.e. Every year each driver 
 
-![Image 1](https://github.com/swami84/WindRider/blob/master/Notebooks/Images/Distance%20vs%20Trip%20Per%20Year.png)
+![Image 2](https://github.com/swami84/WindRider/blob/master/Notebooks/Images/Distance%20vs%20Trip%20Per%20Year.png)
 
 ## Temporal Trip Trends
 
-- Most rides and ride cost peak between 4 - 8 PM
+- Plot shows the trip trends over different weekdays and time of the day
 
 ![Image 3](https://github.com/swami84/WindRider/blob/master/Notebooks/Images/Trips_Week_Summary.png)
 
+- Friday and Saturday night trip count dominate among other weekdays
+- Trip rates ($/mile) are highest during peak pickup time (8-10AM, 4-6PM)
+- Monthly trip trend shows number of trips for winter months is higher compared to other months while trip cost ($/mile) is higher for summer months (more tourists)
 
 
 
 ## Top 15 Vehicles
 
 - Graph shows the top 15 vehicles by avg number of trips
-![Image 4](https://github.com/swami84/WindRider/blob/master/Notebooks/Images/Top%2015%20Vehicles.png)
+![Image 3](https://github.com/swami84/WindRider/blob/master/Notebooks/Images/Top%2015%20Vehicles.png)
 
 # Conclusions
 
